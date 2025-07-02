@@ -8,3 +8,7 @@ uv pip install -e .
 ```
 source .venv/bin/activate && hakurun
 ```
+
+## Credit
+
+**VJ BOT**
