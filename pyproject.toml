@@ -1,0 +1,22 @@
+[project]
+name = "HakuTaka-Curi"
+version = "0.1.0"
+description = "Buat Nyuri Contents Telegram"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "aiosqlite>=0.21.0",
+    "flask==1.1.2",
+    "gunicorn==20.1.0",
+    "itsdangerous==2.0.1",
+    "jinja2==3.0.3",
+    "kurigram>=2.2.6",
+    "tgcrypto>=1.2.5",
+    "werkzeug==2.0.2",
+]
+
+[tool.setuptools.packages.find]
+include = ["HakuX", "pyromod", "Config", "database"]
+
+[project.scripts]
+hakurun = "HakuX.__main__:main"

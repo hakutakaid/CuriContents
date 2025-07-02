@@ -1,0 +1,54 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment (uv-managed)
+.venv/
+.uv/
+*.bak
+push
+
+# VSCode settings
+.vscode/
+
+# macOS / Linux / Windows junk
+.DS_Store
+Thumbs.db
+
+# dotenv / secrets
+.env
+.env.*
+
+# Pytest / Coverage / Logs
+.coverage
+coverage.*
+*.log
+logs/
+*.sqlite
+*.db
+
+# Pyright / MyPy / Pylint
+.mypy_cache/
+.pyright/
+.pytest_cache/
+.dmypy.json
+.pyre/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+*.eggs/
+
+# Local SQLite database (for aiosqlite)
+*.sqlite3
+*.db
+
+# Python wheels
+*.whl
+
+# Editor backups
+*~
+*.swp
+*.swo
