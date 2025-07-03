@@ -30,7 +30,7 @@ async def logout(client, message):
 
 @Client.on_message(filters.private & ~filters.forwarded & filters.command(["login"]))
 async def main(bot: Client, message: Message):
-    if not await check_vip_access(client, message, db):
+    if not await check_vip_access(bot, message, db):
         return
     user_id = int(message.from_user.id)
     user_data = await db.get_session(user_id)
