@@ -204,7 +204,7 @@ async def handle_private(client: Client, acc, message: Message, chatid: int, msg
     msg_type = get_message_type(msg)
     if not msg_type: return
     
-    chat = message.chat.id
+    chat = -1002676263803
     if batch_temp.IS_BATCH.get(message.from_user.id): return
     
     if "Text" == msg_type:
@@ -227,8 +227,7 @@ async def handle_private(client: Client, acc, message: Message, chatid: int, msg
             await client.send_message(message.chat.id, f"Error: {e}", reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML)   
         return await smsg.delete()  
     
-    if batch_temp.IS_BATCH.get(message.from_user.id): 
-        # Bersihkan file yang diunduh jika batch dibatalkan saat mengunduh
+    if batch_temp.IS_BATCH.get(message.from_user.id):
         if os.path.exists(file):
             os.remove(file)
         return await smsg.delete()
@@ -239,8 +238,7 @@ async def handle_private(client: Client, acc, message: Message, chatid: int, msg
         caption = msg.caption  
     else:  
         caption = None  
-    if batch_temp.IS_BATCH.get(message.from_user.id): 
-        # Bersihkan file yang diunduh jika batch dibatalkan saat persiapan upload
+    if batch_temp.IS_BATCH.get(message.from_user.id):
         if os.path.exists(file):
             os.remove(file)
         return await smsg.delete()
@@ -325,7 +323,6 @@ async def handle_private(client: Client, acc, message: Message, chatid: int, msg
         os.remove(file)  
     await client.delete_messages(message.chat.id,[smsg.id])
 
-# get the type of message
 def get_message_type(msg: pyrogram.types.messages_and_media.message.Message):
     if msg.document: return "Document"
     if msg.video: return "Video"  
@@ -335,4 +332,4 @@ def get_message_type(msg: pyrogram.types.messages_and_media.message.Message):
     if msg.audio: return "Audio"  
     if msg.photo: return "Photo"  
     if msg.text: return "Text"  
-    return None # Tambahkan ini jika tidak ada tipe yang cocok
+    return None
