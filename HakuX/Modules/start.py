@@ -252,7 +252,7 @@ async def handle_private(client: Client, acc, message: Message, chatid: int, msg
             pass  
           
         try:  
-            await client.send_document(chat, file, thumb=ph_path, caption=caption, reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML, progress=progress, progress_args=[message,"up"])  
+            await client.send_document(chat, file, thumb=ph_path, caption="", reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML, progress=progress, progress_args=[message,"up"])  
         except Exception as e:  
             if ERROR_MESSAGE == True:  
                 await client.send_message(message.chat.id, f"Error: {e}", reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML)  
@@ -267,7 +267,7 @@ async def handle_private(client: Client, acc, message: Message, chatid: int, msg
             pass  
           
         try:  
-            await client.send_video(chat, file, duration=msg.video.duration, width=msg.video.width, height=msg.video.height, thumb=ph_path, caption=caption, reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML, progress=progress, progress_args=[message,"up"])  
+            await client.send_video(chat, file, duration=msg.video.duration, width=msg.video.width, height=msg.video.height, thumb=ph_path, caption="", reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML, progress=progress, progress_args=[message,"up"])  
         except Exception as e:  
             if ERROR_MESSAGE == True:  
                 await client.send_message(message.chat.id, f"Error: {e}", reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML)  
@@ -289,7 +289,7 @@ async def handle_private(client: Client, acc, message: Message, chatid: int, msg
 
     elif "Voice" == msg_type:  
         try:  
-            await client.send_voice(chat, file, caption=caption, caption_entities=msg.caption_entities, reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML, progress=progress, progress_args=[message,"up"])  
+            await client.send_voice(chat, file, caption="", caption_entities=msg.caption_entities, reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML, progress=progress, progress_args=[message,"up"])  
         except Exception as e:  
             if ERROR_MESSAGE == True:  
                 await client.send_message(message.chat.id, f"Error: {e}", reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML)  
@@ -303,7 +303,7 @@ async def handle_private(client: Client, acc, message: Message, chatid: int, msg
             pass  
 
         try:  
-            await client.send_audio(chat, file, thumb=ph_path, caption=caption, reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML, progress=progress, progress_args=[message,"up"])     
+            await client.send_audio(chat, file, thumb=ph_path, caption="", reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML, progress=progress, progress_args=[message,"up"])     
         except Exception as e:  
             if ERROR_MESSAGE == True:  
                 await client.send_message(message.chat.id, f"Error: {e}", reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML)  
@@ -312,7 +312,7 @@ async def handle_private(client: Client, acc, message: Message, chatid: int, msg
 
     elif "Photo" == msg_type:  
         try:  
-            await client.send_photo(chat, file, caption=caption, reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML)  
+            await client.send_photo(chat, file, caption="", reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML)  
         except Exception as e: 
             if ERROR_MESSAGE == True:  
                 await client.send_message(message.chat.id, f"Error: {e}", reply_to_message_id=message.id, parse_mode=enums.ParseMode.HTML)  
